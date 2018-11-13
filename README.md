@@ -1,7 +1,7 @@
-AWS cli in minimal footprint
+AWS CLI in minimal footprint
 ============================
 
-Automatic built minimal docker image for AWS cli based on Alpine Linux (`library/alpine:latest`), around 77MB.
+Automatic built minimal docker image for AWS CLI based on Alpine Linux (`library/alpine:latest`), around 77MB.
 
 ## Usage
 
