@@ -4,15 +4,24 @@ AWS cli in minimal footprint
 Automatic built minimal docker image for AWS cli based on Alpine Linux (`library/alpine:latest`), around 77MB.
 
 ## Usage
-```
-docker run --rm -v <config_path>:/root/.aws:ro -v <option_yml>:/aws:ro anigeo/awscli <argument>
-```
 
-Or
+configure an alias in your `~/.bash_profile`
 
 ```
-docker run --rm -e AWS_ACCESS_KEY_ID=<key> -e AWS_SECRET_ACCESS_KEY=<secret> -e AWS_DEFAULT_REGION=<region> -v <option_yml>:/aws:ro anigeo/awscli <argument>
+alias aws="docker run -v $HOME:/root -v `pwd`:/workdir  pahud/awscli:latest"
 ```
+
+in a new terminal, you can just run `aws` like this
+
+```
+$ aws sts get-caller-identity
+{
+    "Account": "123456789",
+    "UserId": "XXXXXXXXXXXXXXX",
+    "Arn": "arn:aws:iam::123456789:user/pahud"
+}
+```
+
 
 Refer to <http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html> for detail.
 
