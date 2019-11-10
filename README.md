@@ -29,3 +29,29 @@ Refer to <http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-start
 Alpine Linux: <https://registry.hub.docker.com/_/alpine/>
 
 AWS cli: <https://aws.amazon.com/cli/>
+
+
+
+## Build Your Own AWS CLI Docker image with AWS CDK
+
+This sample will generate a daily auto image building stack for you with AWS CDK(see this [tweet](https://twitter.com/pahudnet/status/1193576209977724931) for more details).
+
+```js
+
+import cdk = require('@aws-cdk/core');
+import codebuild = require('@aws-cdk/aws-codebuild');
+import events = require('@aws-cdk/aws-events');
+import { ScheduledBuild } from '@pahud/aws-codebuild-patterns';
+
+const app = new cdk.App()
+
+new ScheduledBuild(app, 'ScheduledBuild', {
+  source: codebuild.Source.gitHub({
+    owner: 'pahud',
+    repo: 'docker-awscli'
+  }),
+  schedule: events.Schedule.rate(cdk.Duration.days(1)),
+  repositoryName: 'awscli-daily-autobuild'
+})
+```
+
