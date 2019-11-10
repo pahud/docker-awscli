@@ -32,7 +32,7 @@ AWS cli: <https://aws.amazon.com/cli/>
 
 
 
-## Build Your Own AWS CLI Docker image with AWS CDK
+## Build Your Own AWS CLI Docker image with AWS CDK and Automate the pipeline
 
 This sample will generate a daily auto image building stack for you with AWS CDK(see this [tweet](https://twitter.com/pahudnet/status/1193576209977724931) for more details).
 
