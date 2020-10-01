@@ -13,11 +13,11 @@ RUN yum update -y \
 
 FROM alpine:latest
 
-# RUN \
-# 	mkdir -p /aws && \
-# 	apk -Uuv add groff less python3 && \
-# 	pip3 install awscli && \
-# 	rm /var/cache/apk/*
+RUN \
+  mkdir -p /aws && \
+  apk -Uuv add groff less python3 py3-pip && \
+  pip3 install awscli && \
+  rm /var/cache/apk/*
 
 COPY --from=installer /usr/local/aws-cli/ /usr/local/aws-cli/
 COPY --from=installer /aws-cli-bin/ /usr/local/bin/
