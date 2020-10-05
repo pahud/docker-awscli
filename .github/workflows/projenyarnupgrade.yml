@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npx projen@0.3.91
-      - name: Anti-tamper check
-        run: git diff --exit-code
+      - run: yarn install --frozen-lockfile
+      - run: yarn projen
       - run: yarn upgrade
       - run: yarn projen:upgrade
       - name: Create Pull Request
