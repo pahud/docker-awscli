@@ -38,6 +38,9 @@ jspm_packages/
 /lib
 /dist
 /coverage
+cdk.out/
+.cdk.staging/
+.parcel-cache/
 cdk.out
 cdk.context.json
 docker-compose.yml
@@ -54,7 +57,8 @@ yarn-error.log
 !/.github/dependabot.yml
 !/tsconfig.json
 !/src
-!/.eslintrc.json
 !/tsconfig.jest.json
 !/test
+!/.eslintrc.json
 !/cdk.json
+!/.github/workflows/projenyarnupgrade.yml
