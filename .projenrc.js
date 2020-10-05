@@ -17,6 +17,7 @@ const project = new AwsCdkTypeScriptApp({
   cdkDependencies: [
     "@aws-cdk/core",
     "@aws-cdk/aws-codebuild",
+    "@aws-cdk/aws-events",
     "@aws-cdk/aws-events-targets",
     "@aws-cdk/aws-sns",
     "@aws-cdk/aws-sns-subscriptions",
