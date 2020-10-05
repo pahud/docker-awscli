@@ -13,6 +13,7 @@ const project = new AwsCdkTypeScriptApp({
   authorName: "Pahud Hsieh",
   authorEmail: "pahudnet@gmail.com",
   repository: "https://github.com/pahud/docker-awscli.git",
+  dependabot: false,
   cdkDependencies: [
     "@aws-cdk/core",
     "@aws-cdk/aws-codebuild",
